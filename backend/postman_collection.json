@@ -1,0 +1,38 @@
+{
+  "info": {
+    "name": "Task Manager API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/auth/register",
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\": \"Test\", \"email\": \"test@mail.com\", \"password\": \"123456\" }"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/auth/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"email\": \"test@mail.com\", \"password\": \"123456\" }"
+        }
+      }
+    },
+    {
+      "name": "Get Tasks",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api/tasks",
+        "header": [{ "key": "Authorization", "value": "{{token}}" }]
+      }
+    }
+  ]
+}
